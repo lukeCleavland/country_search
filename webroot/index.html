@@ -4,10 +4,24 @@
     <meta charset="utf-8">
     <title>Countries Search</title>
     <link rel="stylesheet" href="/css/main.css">
+    <script src="/resources/jquery-3.5.0.min.js"></script>
   </head>
   <body>
     <script src="/js/app.js"></script>
   	<h1>Country Search Template</h1>
   	<p>This is here to get you started.</p>
+    <form id="country_search" name="country_search">
+      <input name="country" />
+      <input type="radio" name="type" value="full_name" checked>
+      <label>Full</label>
+      <input type="radio" name="type" value="name">
+       <label>Name</label>
+         <input type="radio" name="type" value="code">
+       <label>Code</label>
+      <input type="submit" />
+    </form>
+    <div id="results"></div>
+    <div id="details"></div>
   </body>
+
 </html>
