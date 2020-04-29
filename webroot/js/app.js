@@ -1,3 +1,12 @@
+window.addEventListener('load',function(){
+    countrySearchForm = document.querySelector("#country_search");
+    countrySearchForm.addEventListener('submit',function(e){
+        e.preventDefault();
+        get_countries();
+    });
+});
+
+
 function get_countries(){
     
     var val = document.querySelector('input[name=country]').value;
@@ -101,11 +110,3 @@ function country_template(json,index) {
 
     return string;
 }
-
-window.addEventListener('load',function(){
-    countrySearchForm = document.querySelector("#country_search");
-    countrySearchForm.addEventListener('submit',function(e){
-        e.preventDefault();
-        get_countries();
-    });
-});
