@@ -2,7 +2,7 @@
 class Api {
     
     /**
-    * Used to specifiy endpoint for api
+    * Used to specify endpoint for api
     * @var string
     */
     public $url;
@@ -19,15 +19,12 @@ class Api {
         curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-       $output = curl_exec($ch);
+        $output = curl_exec($ch);
         if(curl_error($ch)) {
             $output = array('error'=>curl_error($ch));
         }
 
         curl_close($ch);
         return $output;
- }
+    }
 }
-
-
-?>

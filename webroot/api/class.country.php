@@ -143,5 +143,3 @@ class Country {
         return $results;
     }
 }
-
-?>

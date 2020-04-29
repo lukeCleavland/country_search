@@ -10,26 +10,25 @@
   <body>
     <script src="/js/app.js"></script>
     <div class="content">
-       <div class="search">
+        <div class="search">
         <h1 class="page_title">Data by Country</h1>
-            <form id="country_search" name="country_search">
-              <input name="country" placeholder="enter country name or code" />
-              
-              <input type="submit" value="search" />
-              <div class="search_parameters">
+        <form id="country_search" name="country_search">
+            <input name="country" placeholder="enter country name or code" />
+            <input type="submit" value="search" />
+            <div class="search_parameters">
                 <span class="gray small">search by:</span>
-              <input type="radio" name="type" value="full_name" checked>
-              <label>full name</label>
-              <input type="radio" name="type" value="name">
-               <label>name <span class="small">(partial or full)</span></label>
-                 <input type="radio" name="type" value="code">
-               <label>country code</label>
-               </div>
-            </form>
+                <input type="radio" name="type" value="full_name" checked>
+                <label>full name</label>
+                <input type="radio" name="type" value="name">
+                <label>name <span class="small">(partial or full)</span></label>
+                <input type="radio" name="type" value="code">
+                <label>country code</label>
+            </div>
+        </form>
        </div>
        <div class="data">
-        <div id="results"></div>
-        <div id="details"></div>
+            <div id="results"></div>
+            <div id="details"></div>
        </div>
     </div>
   </body>
