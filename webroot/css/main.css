@@ -9,12 +9,13 @@ body{
     font-size: .8em;
 }
 
-.content{
-    
-}
 
 .page_title{
     font-size: 3em;
+}
+
+.error{
+    color:red;
 }
 
 .search{

@@ -109,7 +109,7 @@ class Country {
             $count++;
         }
         $region_string = implode(", ", $region_list);
-        return array('count'=>$count, 'appearances'=>$appearances, 'region_list'=>$region_list);
+        return array('count'=>$count, 'appearances'=>$appearances, 'region_list'=>$region_string);
     }
     
     /**

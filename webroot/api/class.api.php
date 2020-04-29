@@ -1,8 +1,18 @@
 <?php
 class Api {
     
+    /**
+    * Used to specifiy endpoint for api
+    * @var string
+    */
     public $url;
     
+    /**
+   * For basic connection to an API
+   * 
+   * @return string $outpout
+   * 
+   */
     public function call_api(){
         $ch = curl_init($this->url);
         

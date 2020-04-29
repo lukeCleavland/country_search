@@ -13,34 +13,33 @@ function get_countries(){
 
             var data = JSON.parse(xhr.responseText);
   
-        
+            //set error messages
             if (data.status) {
                 if (data.status == 400) {
                     message = 'You did not enter a proper country code, please use a 2 or 3 letter code.';
                 }else if(data.status == 404){
-                    message = "No data was found. Try using the 'name' field for a general search.";
+                    message = "No data was found. Try using the 'name' parameter for a general search.";
                 }else{
                     message = data.message;
                 }
-                output = message;
+                output = '<div class="error">'+message+'</div>';
             }else{
-               if (!data.info[0]) {
-                   output = country_template(data.info, null);
-               }else{
-           
-                   for (i=0;i<data.info.length; i++) {
-                       output += country_template(data.info, i);
-                   }
-               }
+            
+            //build output string with json data
+                for (i=0;i<data.info.length; i++) {
+                    output += country_template(data.info, i);
+                }
+                
             }
             
-
+            //build stats string
             if (data.stats) {
-                stats = "<p>results: "+data.stats.count+"<br>regions and subregions: "+data.stats.region_list+"<br> # of appearances (in displayed fields): "+data.stats.appearances+"</p>";
+                stats = "<p><em>results: </em>"+data.stats.count+"<br><em>regions and subregions: </em>"+data.stats.region_list+"<br> <em># of appearances (in displayed fields): </em>"+data.stats.appearances+"</p>";
             }
         
             document.querySelector("#results").innerHTML = output;
-            document.querySelector("#details").innerHTML = stats;
+            document.querySelector("#details").innerHTML = stats.toString();
+            
         } else {
             output = "The request failed. Pleas check your connection.";
         }
@@ -53,53 +52,6 @@ function get_countries(){
 
 }
 
-/*
-function get_countries() {
-    $val = $('input[name=country]').val();
-    $type = $('input[name=type]:checked').val();
-    $.ajax({
-    method: "POST",
-        url: "http://localhost:8765/api/index.php",
-        dataType: 'JSON',
-        data: { endpoint: $type, search: $val }
-    })
-    .done(function( data ) {
-        var $output = '';
-            if (data.status) {
-                if (data.status == 400) {
-                  message = 'You did not enter a proper country code, please use a 2 or 3 letter code.';
-                }else if(data.status == 404){
-                    
-                    message = "No data was found. Try using the 'name' field for a general search.";
-                }else{
-                    message = data.message;
-                }
-               $output = message;
-            }else{
-               if (!data.info[0]) {
-                   $output = country_template(data.info, null);
-               }else{
-           
-                   for (i=0;i<data.info.length; i++) {
-                       $output += country_template(data.info, i);
-                   }
-               }
-            }
-            
-        var $stats ="";  
-            if (data.stats) {
-                $stats = "<p>results: "+data.stats.count+"<br>regions and subregions: "+data.stats.region_list+"<br> # of appearances (in displayed fields): "+data.stats.appearances+"</p>";
-            }
-        
-    $("#results").html($output);
-    $("#details").html($stats);
-  });
-    
-    
-    
-    
-}
-*/
 function country_template(json,index) {
    
     string = flag = name = region = subregion = population = alpha2Code = alpha3Code = languageString = '';
