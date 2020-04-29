@@ -1,1 +1,91 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+}
 
+.gray{
+    color:#666;
+}
+.small{
+    font-size: .8em;
+}
+
+.content{
+    
+}
+
+.page_title{
+    font-size: 3em;
+}
+
+.search{
+    border-bottom:1px solid #ccc;
+    padding: 0 15px 25px 25px;
+
+}
+
+input{
+font-family: 'Open Sans', sans-serif;
+font-size: 1em;
+}
+
+input[name=country]{
+    width: 300px;
+}
+
+.search_parameters{
+    margin-top: 10px;
+}
+
+.search_parameters input{
+    margin-left: 15px;
+}
+
+
+
+.data{
+    margin:25px;
+}
+
+#results{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.country{
+       margin-bottom: 50px;
+    flex: 0 1 48%;
+
+}
+
+.country:nth-child(even){
+   
+}
+.name{
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: .5em;
+}
+.info_wrapper{
+    display:flex;
+    border:1px solid #ccc;
+    padding:25px;
+    border-radius:5px;
+}
+.flag{
+    flex: 0 1 60%;
+}
+
+.flag img{
+    max-width: 100%;
+}
+
+.details{
+    margin: 0 15px;
+}
+
+.details p:first-child{
+    margin-top: 0;
+}

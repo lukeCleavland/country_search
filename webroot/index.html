@@ -2,26 +2,35 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Countries Search</title>
+    <title>Country Search</title>
     <link rel="stylesheet" href="/css/main.css">
-    <script src="/resources/jquery-3.5.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   </head>
   <body>
     <script src="/js/app.js"></script>
-  	<h1>Country Search Template</h1>
-  	<p>This is here to get you started.</p>
-    <form id="country_search" name="country_search">
-      <input name="country" />
-      <input type="radio" name="type" value="full_name" checked>
-      <label>Full</label>
-      <input type="radio" name="type" value="name">
-       <label>Name</label>
-         <input type="radio" name="type" value="code">
-       <label>Code</label>
-      <input type="submit" />
-    </form>
-    <div id="results"></div>
-    <div id="details"></div>
+    <div class="content">
+       <div class="search">
+        <h1 class="page_title">Data by Country</h1>
+            <form id="country_search" name="country_search">
+              <input name="country" placeholder="enter country name or code" />
+              
+              <input type="submit" value="search" />
+              <div class="search_parameters">
+                <span class="gray small">search by:</span>
+              <input type="radio" name="type" value="full_name" checked>
+              <label>full name</label>
+              <input type="radio" name="type" value="name">
+               <label>name <span class="small">(partial or full)</span></label>
+                 <input type="radio" name="type" value="code">
+               <label>country code</label>
+               </div>
+            </form>
+       </div>
+       <div class="data">
+        <div id="results"></div>
+        <div id="details"></div>
+       </div>
+    </div>
   </body>
 
 </html>
